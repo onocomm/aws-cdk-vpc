@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { CdkRoute53Stack } from '../lib/cdk-route53-stack';
+import { CdkVpcStack } from '../lib/cdk-vpc-stack';
 
 const app = new cdk.App();
 
-new CdkRoute53Stack(app, `CdkRoute53Stack`, {
+new CdkVpcStack(app, `CdkVpcStack`, {
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: 'us-east-1',
+    region:  process.env.CDK_DEFAULT_REGION,
   }
 });
